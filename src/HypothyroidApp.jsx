@@ -125,7 +125,7 @@ const HypothyroidApp = () => {
         }}
       >
         <img 
-          src=".\assets\info-en.jpg" 
+          src=".assets\info-en.jpg" 
           alt="Hypothyroid Education" 
           style={{
             width: "100%",
