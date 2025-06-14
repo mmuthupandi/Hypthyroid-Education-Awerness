@@ -132,7 +132,6 @@ const HypothyroidApp = () => {
             borderRadius: "12px",
             marginBottom: "24px",
             height: "500px",
-            objectFit: "cover"
           }}
         />
 
