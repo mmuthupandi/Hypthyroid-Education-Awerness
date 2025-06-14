@@ -121,9 +121,11 @@ const HypothyroidApp = () => {
 
       <div
         style={{
-          ...containerStyle,
-          paddingTop: isMobile ? "3.2rem" : "4.2rem"
-        }}
+    width: '300px',       // or any medium size you prefer
+    height: 'auto',       // maintain aspect ratio
+    display: 'block',     // removes extra space below image
+    margin: '0 auto'      // center the image
+  }}
       >
         <img 
           src={myImage} alt="My Asset"
