@@ -3,6 +3,7 @@ import LanguageSelector from './LanguageSelector';
 import HypothyroidApp from './HypothyroidApp';
 import HypothyroidAppTamil from './HypothyroidAppTamil';
 
+
 function App() {
   return (
     <Router>
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<LanguageSelector />} />
         <Route path="/info-en" element={<HypothyroidApp />} />
         <Route path="/info-ta" element={<HypothyroidAppTamil />} />
+        
       </Routes>
     </Router>
   );
