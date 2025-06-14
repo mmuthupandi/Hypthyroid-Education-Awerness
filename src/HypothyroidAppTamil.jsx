@@ -135,16 +135,15 @@ const HypothyroidAppTamil = () => {
       >
         {/* Hero Image */}
         <img 
-          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-          alt="Hypothyroid Education"
-          style={{
-            width: "100%",
-            borderRadius: "12px",
-            marginBottom: "24px",
-            height: isMobile ? "300px" : "500px",
-            objectFit: "cover",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
-          }}
+          src={myImage}
+            alt="Hypothyroid Info"
+            style={{
+              width: "100%",
+              maxWidth: "500px",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
         />
 
         <div style={sectionStyle}>
