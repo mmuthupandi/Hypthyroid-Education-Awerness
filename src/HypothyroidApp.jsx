@@ -120,12 +120,12 @@ const HypothyroidApp = () => {
       </div>
 
       <div
-         style={{
+        style={{
     width: '100%',
-    maxWidth: '500px',   // Large enough on desktop
+    maxWidth: '500px',
     height: 'auto',
     display: 'block',
-    margin: '0 auto'
+    margin: '2rem auto 0 auto' // top auto bottom auto
   }}
       >
         <img 
