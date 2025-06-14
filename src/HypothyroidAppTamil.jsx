@@ -59,7 +59,6 @@ const HypothyroidAppTamil = () => {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
   };
 
-  // Basic responsiveness check
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
   if (isMobile) {
@@ -70,18 +69,19 @@ const HypothyroidAppTamil = () => {
   }
 
   const handleBack = () => {
-    // In a real app, you might use react-router's useHistory or useNavigate
-    // For this example, we'll use window.location
     window.location.href = "/";
   };
 
   return (
-    <div style={{
-      background: "linear-gradient(to bottom, #fff, #f9f0f5)",
-      minHeight: "100vh",
-      padding: "0",
-      margin: "0"
-    }}>
+    <div
+      style={{
+        background: "linear-gradient(to bottom, #fff, #f9f0f5)",
+        minHeight: "100vh",
+        padding: "0",
+        margin: "0"
+      }}
+    >
+      {/* Fixed Header */}
       <div
         style={{
           display: "flex",
@@ -122,20 +122,27 @@ const HypothyroidAppTamil = () => {
             <polyline points="18,10 12,16 18,22" stroke="#fff" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-        <span style={{ width: "100%", textAlign: "center" }}>
+        <span style={{
+          width: "100%",
+          textAlign: "center",
+          paddingLeft: isMobile ? "2.5rem" : "3.5rem",
+          paddingRight: isMobile ? "0.5rem" : "1rem"
+        }}>
           தைராய்டு மற்றும் ஹைப்போதைராய்டிசம்
         </span>
       </div>
 
+      {/* Content Area */}
       <div
         style={{
           ...containerStyle,
-          paddingTop: isMobile ? "5rem" : "6rem" // Adjusted padding to accommodate fixed header
+          paddingTop: isMobile ? "5rem" : "6rem"
         }}
       >
         {/* Hero Image */}
-        <img 
-          src={myImage}
+        <div style={{ textAlign: "center", margin: "2rem auto" }}>
+          <img
+            src={myImage}
             alt="Hypothyroid Info"
             style={{
               width: "100%",
@@ -144,19 +151,21 @@ const HypothyroidAppTamil = () => {
               borderRadius: "8px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
             }}
-        />
+          />
+        </div>
 
+        {/* Content Sections */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>தைராய்டு என்றால் என்ன?</h2>
           <p style={paragraphStyle}>
-            தைராய்டு என்பது உங்கள் கழுத்தின் முன்புறத்தில் அமைந்துள்ள ஒரு பட்டாம்பூச்சி வடிவ சுரப்பி ஆகும். இது தைராய்டு ஹார்மோன்களை உற்பத்தி செய்து வெளியிடுகிறது. இந்த ஹார்மோன்கள் உடல் ஆற்றலை எவ்வாறு பயன்படுத்துகிறது (வளர்சிதை மாற்றம் - Metabolism) என்பதை ஒழுங்குபடுத்துகின்றன. இதன் முக்கிய ஹார்மோன்கள் தைராக்சின் (T4) மற்றும் டிரைஅயோடோதைரோனின் (T3) ஆகும்.
+            தைராய்டு என்பது உங்கள் கழுத்தின் முன்புறத்தில் அமைந்துள்ள ஒரு பட்டாம்பூச்சி வடிவ சுரப்பி ஆகும்...
           </p>
         </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>ஹைப்போதைராய்டிசம் என்றால் என்ன?</h2>
           <p style={paragraphStyle}>
-            ஹைப்போதைராய்டிசம் என்பது தைராய்டு சுரப்பி போதுமான அளவு தைராய்டு ஹார்மோன்களை (T3 மற்றும் T4) உற்பத்தி செய்யாத ஒரு நிலையாகும். இதனால் உடலின் பல செயல்பாடுகள் மெதுவாக நடக்கின்றன.
+            ஹைப்போதைராய்டிசம் என்பது தைராய்டு சுரப்பி போதுமான அளவு தைராய்டு ஹார்மோன்களை உற்பத்தி செய்யாத...
           </p>
         </div>
 
@@ -185,20 +194,18 @@ const HypothyroidAppTamil = () => {
         <div style={sectionStyle}>
           <h2 style={headingStyle}>ஏன் பெண்களுக்கு அதிகம் ஏற்படுகிறது?</h2>
           <p style={paragraphStyle}>
-            பெண்கள் ஹைப்போதைராய்டிசத்திற்கு ஆண்களை விட அதிகமாக பாதிக்கப்படுகிறார்கள். குறிப்பாக, பிரசவத்திற்குப் பிறகு அல்லது மாதவிடாய் நின்ற பிறகு (மெனோபாஸ்) இதன் தாக்கம் அதிகம் காணப்படுகிறது. ஹாஷிமோட்டோஸ் தைராய்டிடிஸ் போன்ற ஆட்டோ இம்யூன் நோய்களால் இது ஏற்படலாம்.
+            பெண்கள் ஹைப்போதைராய்டிசத்திற்கு ஆண்களை விட அதிகமாக பாதிக்கப்படுகிறார்கள்...
           </p>
         </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>நோய்நிர்ணயம் (Diagnosis)</h2>
-          <p style={paragraphStyle}>
-            இது இரத்தப் பரிசோதனை மூலம் கண்டறியப்படுகிறது:
-          </p>
-          <ul style={{...listStyle, marginTop: '16px'}}>
+          <p style={paragraphStyle}>இது இரத்தப் பரிசோதனை மூலம் கண்டறியப்படுகிறது:</p>
+          <ul style={{ ...listStyle, marginTop: '16px' }}>
             {[
-              "TSH பரிசோதனை: தைராய்டு தூண்டுதல் ஹார்மோன் (TSH) அளவு அதிகமாக இருக்கும்.",
-              "T4 பரிசோதனை: தைராக்சின் (T4) ஹார்மோன் அளவு குறைவாக இருக்கும்.",
-              "T3 பரிசோதனை: டிரைஅயோடோதைரோனின் (T3) ஹார்மோன் அளவு குறைவாக இருக்கலாம்."
+              "TSH பரிசோதனை: TSH அளவு அதிகமாக இருக்கும்.",
+              "T4 பரிசோதனை: T4 அளவு குறைவாக இருக்கும்.",
+              "T3 பரிசோதனை: T3 அளவு குறைவாக இருக்கலாம்."
             ].map((item, index) => (
               <li key={index} style={listItemStyle}>
                 <span style={bulletStyle}>›</span>
@@ -210,15 +217,15 @@ const HypothyroidAppTamil = () => {
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>சிகிச்சை மற்றும் ஆலோசனை</h2>
-           <p style={paragraphStyle}>
-            பொதுவாக தைராக்சின் (Levothyroxine) மாத்திரை பரிந்துரைக்கப்படுகிறது. இது வாழ்நாள் முழுவதும் எடுத்துக்கொள்ள வேண்டியிருக்கலாம்.
+          <p style={paragraphStyle}>
+            பொதுவாக தைராக்சின் (Levothyroxine) மாத்திரை பரிந்துரைக்கப்படுகிறது...
           </p>
-          <ul style={{...listStyle, marginTop: '16px'}}>
+          <ul style={{ ...listStyle, marginTop: '16px' }}>
             {[
               "மருத்துவரின் பரிந்துரைப்படி மருந்துகளைத் தவறாமல் எடுத்துக்கொள்ள வேண்டும்.",
-              "புகையிலை மற்றும் புகைப்பிடிக்கும் பழக்கத்தை கைவிடுவது அவசியம்.",
-              "தைராய்டு மருந்தை காலையில் வெறும் வயிற்றில் உட்கொள்வது சிறந்தது.",
-              "மற்ற மருந்துகளை (குறிப்பாக இரும்பு, கால்சியம் சப்ளிமெண்ட்ஸ்) தைராய்டு மாத்திரை எடுத்த சில மணி நேரங்களுக்குப் பிறகு எடுத்துக்கொள்ள வேண்டும்."
+              "புகையிலை மற்றும் புகைப்பிடிக்கும் பழக்கத்தை கைவிட வேண்டும்.",
+              "மருந்தை காலையில் வெறும் வயிற்றில் எடுத்துக்கொள்.",
+              "மற்ற மருந்துகளைப் பிறகு எடுத்துக்கொள்."
             ].map((item, index) => (
               <li key={index} style={listItemStyle}>
                 <span style={bulletStyle}>›</span>
@@ -227,7 +234,6 @@ const HypothyroidAppTamil = () => {
             ))}
           </ul>
         </div>
-
       </div>
     </div>
   );
