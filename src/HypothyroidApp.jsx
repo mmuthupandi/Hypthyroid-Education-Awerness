@@ -121,10 +121,11 @@ const HypothyroidApp = () => {
 
       <div
         style={{
-    width: '300px',       // or any medium size you prefer
-    height: 'auto',       // maintain aspect ratio
-    display: 'block',     // removes extra space below image
-    margin: '0 auto'      // center the image
+    width: '100%',
+    maxWidth: '400px',
+    height: 'auto',
+    display: 'block',
+    margin: '0 auto'
   }}
       >
         <img 
