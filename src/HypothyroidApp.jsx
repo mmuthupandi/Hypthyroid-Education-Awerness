@@ -2,18 +2,28 @@ import React from 'react';
 import myImage from './assets/info-en.jpg';
 
 const HypothyroidApp = () => {
+  const isMobile = window.innerWidth <= 768;
+
+  const containerStyle = {
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: "20px",
+    paddingTop: isMobile ? "4rem" : "5rem",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+  };
+
   const sectionStyle = {
     background: "#fff",
     borderRadius: "12px",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
     marginBottom: "24px",
-    padding: "24px",
+    padding: isMobile ? "20px" : "24px",
     border: "1px solid #f0f0f0"
   };
 
   const headingStyle = {
     color: "#e91e63",
-    fontSize: "1.5rem",
+    fontSize: isMobile ? "1.3rem" : "1.5rem",
     fontWeight: "600",
     marginBottom: "16px",
     marginTop: "0"
@@ -49,21 +59,6 @@ const HypothyroidApp = () => {
     margin: "0"
   };
 
-  const containerStyle = {
-    maxWidth: "800px",
-    margin: "0 auto",
-    padding: "20px",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-  };
-
-  const isMobile = window.innerWidth <= 768;
-  if (isMobile) {
-    containerStyle.padding = "16px";
-    headingStyle.fontSize = "1.3rem";
-    sectionStyle.padding = "20px";
-    sectionStyle.marginBottom = "20px";
-  }
-
   const handleBack = () => {
     window.location.href = "/";
   };
@@ -75,6 +70,7 @@ const HypothyroidApp = () => {
       padding: "0",
       margin: "0"
     }}>
+      {/* Fixed Header */}
       <div
         style={{
           display: "flex",
@@ -114,24 +110,31 @@ const HypothyroidApp = () => {
             <polyline points="18,10 12,16 18,22" stroke="#fff" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <span style={{ width: "100%", textAlign: "center" }}>
+        <span style={{
+          width: "100%",
+          textAlign: "center",
+          paddingLeft: isMobile ? "2.5rem" : "3.5rem",
+          paddingRight: isMobile ? "0.5rem" : "1rem"
+        }}>
           Patient Education - Hypothyroidism
         </span>
       </div>
 
-      <div
-        style={{
-    width: '100%',
-    maxWidth: '500px',
-    height: 'auto',
-    display: 'block',
-    margin: '2rem auto 0 auto' // top auto bottom auto
-  }}
-      >
-        <img 
-          src={myImage} alt="My Asset"
-          style={{ width: '100%', height: 'auto' }}
-        />
+      {/* Main Content */}
+      <div style={containerStyle}>
+        <div style={{ textAlign: "center", margin: "2rem auto" }}>
+          <img
+            src={myImage}
+            alt="Hypothyroid Info"
+            style={{
+              width: "100%",
+              maxWidth: "500px",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
+          />
+        </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Thyroid?</h2>
