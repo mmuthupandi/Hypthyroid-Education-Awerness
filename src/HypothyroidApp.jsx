@@ -127,12 +127,7 @@ const HypothyroidApp = () => {
       >
         <img 
           src={myImage} alt="My Asset"
-          style={{
-            width: "100%",
-            borderRadius: "12px",
-            marginBottom: "24px",
-            height: "500px",
-          }}
+          style={{ width: '100%', height: 'auto' }}
         />
 
         <div style={sectionStyle}>
