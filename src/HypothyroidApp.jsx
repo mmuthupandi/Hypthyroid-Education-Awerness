@@ -1,4 +1,5 @@
 import React from 'react';
+import myImage from './assets/info-en.jpg';
 
 const HypothyroidApp = () => {
   const sectionStyle = {
@@ -125,8 +126,7 @@ const HypothyroidApp = () => {
         }}
       >
         <img 
-          src=".assets\info-en.jpg" 
-          alt="Hypothyroid Education" 
+          src={myImage} alt="My Asset"
           style={{
             width: "100%",
             borderRadius: "12px",
