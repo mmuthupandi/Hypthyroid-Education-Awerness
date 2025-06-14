@@ -5,7 +5,7 @@ Follow these steps to run the project locally on your machine.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/udhayasankar0/App-V1
+git clone https://github.com/mmuthupandi/Hypthyroid-Education-Awerness
 ````
 
 ### 2. Install Dependencies
@@ -43,4 +43,4 @@ npm run build
 
 ## 👨‍💻 Author
 
-Made with ❤️ by **[UD]**
+Made with ❤️ by **[UD] and [MM]**
