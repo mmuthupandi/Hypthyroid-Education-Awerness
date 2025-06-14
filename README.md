@@ -43,4 +43,4 @@ npm run build
 
 ## 👨‍💻 Author
 
-Made with ❤️ by **[UD] and [MM]**
+Made with ❤️ by **[MM] and [UD]**
