@@ -1,15 +1,15 @@
 import React from 'react';
-import myImage from './assets/info-en.jpg';
+import infoImage from './assets/info-en.jpg';
 import thyroidImage from './assets/thyroid.jpg';
 
 const HypothyroidApp = () => {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
 
   const containerStyle = {
     maxWidth: "960px",
     margin: "0 auto",
     padding: isMobile ? "16px" : "24px",
-    paddingTop: isMobile ? "5rem" : "6rem",
+    paddingTop: isMobile ? "4.5rem" : "5.5rem",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
   };
 
@@ -38,26 +38,25 @@ const HypothyroidApp = () => {
 
   const listItemStyle = {
     position: "relative",
-    paddingLeft: "24px",
-    marginBottom: "10px",
+    paddingLeft: "20px",
+    marginBottom: "8px",
     color: "#555",
     fontSize: "0.95rem",
-    lineHeight: "1.6"
+    lineHeight: "1.5"
   };
 
   const bulletStyle = {
+    content: "•",
     color: "#e91e63",
     fontWeight: "bold",
     position: "absolute",
-    left: "0",
-    top: "1px",
-    fontSize: "1.2rem"
+    left: "0"
   };
 
   const paragraphStyle = {
     color: "#555",
     fontSize: "0.95rem",
-    lineHeight: "1.7",
+    lineHeight: "1.6",
     margin: "0"
   };
 
@@ -72,23 +71,24 @@ const HypothyroidApp = () => {
       padding: "0",
       margin: "0"
     }}>
-      {/* Header */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "#de5d83",
-        color: "white",
-        padding: isMobile ? "0.7rem 0.5rem" : "1rem 0.5rem",
-        fontSize: isMobile ? "1.2rem" : "1.5rem",
-        fontWeight: 500,
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        justifyContent: "center",
-        boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-        zIndex: 100
-      }}>
+      {/* Fixed Header */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: "#de5d83",
+          color: "white",
+          padding: isMobile ? "0.7rem 0.5rem 0.7rem 0.2rem" : "1rem 0.5rem 1rem 0.2rem",
+          fontSize: isMobile ? "1.2rem" : "1.5rem",
+          fontWeight: 500,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          justifyContent: "center",
+          zIndex: 100
+        }}
+      >
         <button
           onClick={handleBack}
           style={{
@@ -99,6 +99,7 @@ const HypothyroidApp = () => {
             background: "none",
             border: "none",
             cursor: "pointer",
+            zIndex: 20,
             padding: 0,
             display: "flex",
             alignItems: "center"
@@ -107,41 +108,46 @@ const HypothyroidApp = () => {
         >
           <svg width={isMobile ? 28 : 32} height={isMobile ? 28 : 32} viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="16" fill="#de5d83" />
-            <polyline points="18,10 12,16 18,22" stroke="#fff" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <polyline points="18,10 12,16 18,22" stroke="#fff" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <span style={{ width: "100%", textAlign: "center" }}>
+        <span style={{
+          width: "100%",
+          textAlign: "center",
+          paddingLeft: isMobile ? "2.5rem" : "3.5rem",
+          paddingRight: isMobile ? "0.5rem" : "1rem"
+        }}>
           Patient Education - Hypothyroidism
         </span>
       </div>
 
-      {/* Content */}
+      {/* Main Content */}
       <div style={containerStyle}>
-        <img
-          src={myImage}
-          alt="Hypothyroid Info"
-          style={{
-            width: "100%",
-            maxWidth: "500px",
-            height: "auto",
-            display: "block",
-            margin: "0 auto 24px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-          }}
-        />
+        <div style={{ textAlign: "center", margin: "2rem auto" }}>
+          <img
+            src={infoImage}
+            alt="Hypothyroid Info"
+            style={{
+              width: "100%",
+              maxWidth: "500px",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
+          />
+        </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Thyroid?</h2>
           <p style={paragraphStyle}>
-            The thyroid is a gland located at the front of your neck. It produces hormones that control metabolism, growth, and development. The main hormones are T3 and T4.
+            The thyroid is a gland located at the front of your neck. It produces chemical substances called hormones that travel through the bloodstream and control how your body uses energy.
           </p>
         </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Hypothyroidism?</h2>
           <p style={paragraphStyle}>
-            Hypothyroidism is a condition where the thyroid gland doesn’t produce enough hormones. It affects many body functions, leading to fatigue, weight gain, and more.
+            Hypothyroidism is a condition where your thyroid gland does not produce enough thyroid hormones to meet your body's needs. It affects all organs in the body.
           </p>
         </div>
 
@@ -153,13 +159,14 @@ const HypothyroidApp = () => {
               "Hoarseness",
               "Weight gain",
               "Muscle weakness",
+              "Numbness in hands",
               "Brain fog",
               "Depression",
-              "Cold intolerance",
-              "Slow heart rate"
+              "Anxiety"
             ].map((symptom, index) => (
               <li key={index} style={listItemStyle}>
-                <span style={bulletStyle}>›</span> {symptom}
+                <span style={bulletStyle}>•</span>
+                {symptom}
               </li>
             ))}
           </ul>
@@ -169,33 +176,20 @@ const HypothyroidApp = () => {
           <h2 style={headingStyle}>Why Women?</h2>
           <ul style={listStyle}>
             {[
+              "At young age",
               "During or after pregnancy",
               "After menopause",
-              "Autoimmune disorders (e.g., Hashimoto's)",
-              "More hormonal changes"
+              "With autoimmune diseases (like Hashimoto's thyroiditis)"
             ].map((reason, index) => (
               <li key={index} style={listItemStyle}>
-                <span style={bulletStyle}>›</span> {reason}
+                <span style={bulletStyle}>•</span>
+                {reason}
               </li>
             ))}
           </ul>
         </div>
 
-        <div style={sectionStyle}>
-          <h2 style={headingStyle}>Diagnosis</h2>
-          <ul style={listStyle}>
-            {[
-              "High TSH levels",
-              "Low T4 and possibly T3 levels",
-              "Positive thyroid antibodies (autoimmune)"
-            ].map((test, index) => (
-              <li key={index} style={listItemStyle}>
-                <span style={bulletStyle}>›</span> {test}
-              </li>
-            ))}
-          </ul>
-        </div>
-
+        {/* ⬇️ New Thyroid Image Inserted Before Diagnosis Section */}
         <img
           src={thyroidImage}
           alt="Thyroid Illustration"
@@ -211,16 +205,34 @@ const HypothyroidApp = () => {
         />
 
         <div style={sectionStyle}>
-          <h2 style={headingStyle}>Treatment Tips</h2>
+          <h2 style={headingStyle}>Diagnosis</h2>
           <ul style={listStyle}>
             {[
-              "Take thyroxine daily on an empty stomach",
-              "Avoid calcium/iron supplements close to medication",
-              "No smoking",
-              "Monitor regularly with your doctor"
+              "TSH test - high levels",
+              "T4 test - low levels",
+              "T3 test - low levels",
+              "Thyroid antibody test – may be positive in autoimmune thyroiditis"
+            ].map((test, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>•</span>
+                {test}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>How to Increase Thyroid Hormone Levels?</h2>
+          <ul style={listStyle}>
+            {[
+              "Thyroxine supplement as a replacement for the T4 hormone.",
+              "Avoid smoking, as it affects the thyroid.",
+              "Avoid taking other medications at the same time as thyroxine.",
+              "Adjust medications as per your doctor’s advice."
             ].map((tip, index) => (
               <li key={index} style={listItemStyle}>
-                <span style={bulletStyle}>›</span> {tip}
+                <span style={bulletStyle}>•</span>
+                {tip}
               </li>
             ))}
           </ul>
