@@ -72,7 +72,7 @@ const HypothyroidApp = () => {
       padding: "0",
       margin: "0"
     }}>
-      {/* Fixed Header */}
+      {/* Header */}
       <div
         style={{
           display: "flex",
@@ -122,9 +122,9 @@ const HypothyroidApp = () => {
         </span>
       </div>
 
-      {/* Main Content */}
+      {/* Main */}
       <div style={containerStyle}>
-        {/* Top image */}
+        {/* Top Image */}
         <div style={{ textAlign: "center", margin: "2rem auto" }}>
           <img
             src={myImage}
@@ -139,6 +139,7 @@ const HypothyroidApp = () => {
           />
         </div>
 
+        {/* Sections */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Thyroid?</h2>
           <p style={paragraphStyle}>
@@ -151,6 +152,21 @@ const HypothyroidApp = () => {
           <p style={paragraphStyle}>
             Hypothyroidism is a condition where your thyroid gland does not produce enough thyroid hormones (T4 and T3) to meet your body's needs. Hypothyroidism affects all the organs in the body because thyroid hormones are essential for the normal functioning of every cell in the body.
           </p>
+        </div>
+
+        {/* Junkfood Image */}
+        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <img
+            src={junkfoodImage}
+            alt="Avoid junk food"
+            style={{
+              width: "100%",
+              maxWidth: "400px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              height: "auto"
+            }}
+          />
         </div>
 
         <div style={sectionStyle}>
@@ -174,7 +190,7 @@ const HypothyroidApp = () => {
           </ul>
         </div>
 
-        {/* Thyroid image before Why Women */}
+        {/* Thyroid Illustration Image */}
         <img
           src={thyroidImage}
           alt="Thyroid Illustration"
@@ -224,6 +240,27 @@ const HypothyroidApp = () => {
         </div>
 
         <div style={sectionStyle}>
+          <h2 style={headingStyle}>Causes</h2>
+          <ul style={listStyle}>
+            {[
+              "Autoimmune thyroid disease (Hashimoto’s thyroiditis)",
+              "Radioactive iodine or surgery for hyperthyroidism or thyroid cancer",
+              "Over-treatment of hyperthyroidism with antithyroid drugs",
+              "Some medicines",
+              "Some health foods, e.g. kelp (seaweed)",
+              "A malfunction of the pituitary gland",
+              "Sometimes hypothyroidism is present at birth (congenital hypothyroidism)",
+              "Radiation for head and neck cancers"
+            ].map((cause, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>•</span>
+                {cause}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={sectionStyle}>
           <h2 style={headingStyle}>How to Increase Thyroid Hormone Levels?</h2>
           <ul style={listStyle}>
             {[
@@ -241,48 +278,13 @@ const HypothyroidApp = () => {
         </div>
 
         <div style={sectionStyle}>
-          <h2 style={headingStyle}>Causes</h2>
-          <ul style={listStyle}>
-            {[
-              "Autoimmune thyroid disease sometimes called Hashimoto’s thyroiditis",
-              "Radioactive iodine or surgery to correct hyperthyroidism or thyroid cancer",
-              "Over-treatment of hyperthyroidism with antithyroid drugs",
-              "Some medicines",
-              "Some health foods, e.g. kelp (seaweed)",
-              "A malfunction of the pituitary gland",
-              "Sometimes hypothyroidism is present at birth - this is known as congenital hypothyroidism",
-              "Radiation for head and neck cancers"
-            ].map((cause, index) => (
-              <li key={index} style={listItemStyle}>
-                <span style={bulletStyle}>•</span>
-                {cause}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <img
-            src={junkfoodImage}
-            alt="Avoid junk food"
-            style={{
-              width: "100%",
-              maxWidth: "400px",
-              borderRadius: "8px",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-              height: "auto"
-            }}
-          />
-        </div>
-
-        <div style={sectionStyle}>
           <h2 style={headingStyle}>Key Points to Remember</h2>
           <ul style={listStyle}>
             {[
-              "Review specialist in thyroid and other endocrine disorders - every 6 months",
-              "Once stable you should have a blood test once a year to check your thyroid hormone levels",
-              "Take your tablets consistently every day",
-              "Pregnant women with hypothyroidism are recommended to consult physician for dosage adjustment based on the thyroid level"
+              "Review with a thyroid/endocrine specialist every 6 months.",
+              "Once stable, get a blood test annually to check thyroid levels.",
+              "Take your tablets consistently every day.",
+              "Pregnant women with hypothyroidism should consult a physician for dosage adjustment."
             ].map((point, index) => (
               <li key={index} style={listItemStyle}>
                 <span style={bulletStyle}>•</span>
@@ -297,4 +299,3 @@ const HypothyroidApp = () => {
 };
 
 export default HypothyroidApp;
-
