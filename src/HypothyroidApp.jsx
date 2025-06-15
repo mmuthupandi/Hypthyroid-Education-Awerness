@@ -1,5 +1,6 @@
 import React from 'react';
 import myImage from './assets/info-en.jpg';
+import thyroidImage from './assets/thyroid.jpg';
 
 const HypothyroidApp = () => {
   const isMobile = window.innerWidth <= 768;
@@ -129,6 +130,21 @@ const HypothyroidApp = () => {
             style={{
               width: "100%",
               maxWidth: "500px",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
+          />
+        </div>
+
+        {/* Extra Thyroid Image */}
+        <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+          <img
+            src={thyroidImage}
+            alt="Thyroid"
+            style={{
+              width: "100%",
+              maxWidth: "400px",
               height: "auto",
               borderRadius: "8px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
