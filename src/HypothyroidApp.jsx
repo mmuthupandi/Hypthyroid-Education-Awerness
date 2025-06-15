@@ -1,15 +1,15 @@
 import React from 'react';
-import infoImage from './assets/info-en.jpg';
+import myImage from './assets/info-en.jpg';
 import thyroidImage from './assets/thyroid.jpg';
 
 const HypothyroidApp = () => {
   const isMobile = window.innerWidth <= 768;
 
   const containerStyle = {
-    maxWidth: "960px",
+    maxWidth: "800px",
     margin: "0 auto",
-    padding: isMobile ? "16px" : "24px",
-    paddingTop: isMobile ? "4.5rem" : "5.5rem",
+    padding: "20px",
+    paddingTop: isMobile ? "4rem" : "5rem",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
   };
 
@@ -123,9 +123,10 @@ const HypothyroidApp = () => {
 
       {/* Main Content */}
       <div style={containerStyle}>
+        {/* Top image */}
         <div style={{ textAlign: "center", margin: "2rem auto" }}>
           <img
-            src={infoImage}
+            src={myImage}
             alt="Hypothyroid Info"
             style={{
               width: "100%",
@@ -140,14 +141,14 @@ const HypothyroidApp = () => {
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Thyroid?</h2>
           <p style={paragraphStyle}>
-            The thyroid is a gland located at the front of your neck. It produces chemical substances called hormones that travel through the bloodstream and control how your body uses energy.
+            The thyroid is a gland located at the front of your neck. It produces chemical substances called hormones that travel through the bloodstream and control how your body uses energy. In other words, it regulates your metabolism, growth, and development from an early stage. The hormones produced by the thyroid are mainly thyroxine (T4) and triiodothyronine (T3).
           </p>
         </div>
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>What is Hypothyroidism?</h2>
           <p style={paragraphStyle}>
-            Hypothyroidism is a condition where your thyroid gland does not produce enough thyroid hormones to meet your body's needs. It affects all organs in the body.
+            Hypothyroidism is a condition where your thyroid gland does not produce enough thyroid hormones (T4 and T3) to meet your body's needs. Hypothyroidism affects all the organs in the body because thyroid hormones are essential for the normal functioning of every cell in the body.
           </p>
         </div>
 
@@ -172,6 +173,21 @@ const HypothyroidApp = () => {
           </ul>
         </div>
 
+        {/* Thyroid image before Why Women */}
+        <img
+          src={thyroidImage}
+          alt="Thyroid Illustration"
+          style={{
+            width: "100%",
+            maxWidth: isMobile ? "260px" : "340px",
+            height: "auto",
+            display: "block",
+            margin: "32px auto",
+            borderRadius: "8px",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
+          }}
+        />
+
         <div style={sectionStyle}>
           <h2 style={headingStyle}>Why Women?</h2>
           <ul style={listStyle}>
@@ -188,21 +204,6 @@ const HypothyroidApp = () => {
             ))}
           </ul>
         </div>
-
-        {/* ⬇️ New Thyroid Image Inserted Before Diagnosis Section */}
-        <img
-          src={thyroidImage}
-          alt="Thyroid Illustration"
-          style={{
-            width: "100%",
-            maxWidth: isMobile ? "260px" : "340px",
-            height: "auto",
-            display: "block",
-            margin: "32px auto",
-            borderRadius: "8px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
-          }}
-        />
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>Diagnosis</h2>
@@ -227,8 +228,8 @@ const HypothyroidApp = () => {
             {[
               "Thyroxine supplement as a replacement for the T4 hormone.",
               "Avoid smoking, as it affects the thyroid.",
-              "Avoid taking other medications at the same time as thyroxine.",
-              "Adjust medications as per your doctor’s advice."
+              "Avoid taking other medications at the same time as thyroxine, as this may interfere with its absorption.",
+              "You may need to adjust or reschedule your other medications as per your doctor’s advice."
             ].map((tip, index) => (
               <li key={index} style={listItemStyle}>
                 <span style={bulletStyle}>•</span>
