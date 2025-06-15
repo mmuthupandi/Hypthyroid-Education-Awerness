@@ -1,7 +1,7 @@
 import React from 'react';
 import myImage from './assets/info-en.translated.jpg';
 import thyroidImg from './assets/thyroid.jpg';
-import junkFoodImg from './assets/junkfood.jpg'; // ✅ new image import
+import junkFoodImg from './assets/junkfood.translated.jpg'; // ✅ new image import
 
 const HypothyroidAppTamil = () => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
