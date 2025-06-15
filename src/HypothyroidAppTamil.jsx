@@ -1,5 +1,5 @@
 import React from 'react';
-import myImage from './assets/info-en.translated.jpg';
+import myImage from './assets/info-ta.jpg';
 import thyroidImg from './assets/thyroid.jpg';
 import junkFoodImg from './assets/junkfood.translated.jpg'; // ✅ new image import
 
@@ -162,6 +162,24 @@ const HypothyroidAppTamil = () => {
           </p>
         </div>
 
+        {/* ✅ Junk Food Image moved here */}
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>மருந்து செயல்பாட்டை பாதிக்கும் உணவுகள்</h2>
+          <img
+            src={junkFoodImg}
+            alt="Junk Foods"
+            style={{
+              width: "100%",
+              maxWidth: isMobile ? "300px" : "460px",
+              height: "auto",
+              display: "block",
+              margin: "0 auto",
+              borderRadius: "10px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
+          />
+        </div>
+
         {/* Section 3 */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>அறிகுறிகள்</h2>
@@ -184,6 +202,21 @@ const HypothyroidAppTamil = () => {
             ))}
           </ul>
         </div>
+
+        {/* ✅ Thyroid Image moved here */}
+        <img
+          src={thyroidImg}
+          alt="Thyroid Illustration"
+          style={{
+            width: "100%",
+            maxWidth: isMobile ? "260px" : "340px",
+            height: "auto",
+            display: "block",
+            margin: "32px auto",
+            borderRadius: "8px",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
+          }}
+        />
 
         {/* Section 4 */}
         <div style={sectionStyle}>
@@ -211,21 +244,6 @@ const HypothyroidAppTamil = () => {
           </ul>
         </div>
 
-        {/* Thyroid Image */}
-        <img
-          src={thyroidImg}
-          alt="Thyroid Illustration"
-          style={{
-            width: "100%",
-            maxWidth: isMobile ? "260px" : "340px",
-            height: "auto",
-            display: "block",
-            margin: "32px auto",
-            borderRadius: "8px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
-          }}
-        />
-
         {/* Section 6 */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>சிகிச்சை மற்றும் ஆலோசனை</h2>
@@ -245,25 +263,6 @@ const HypothyroidAppTamil = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* ✅ NEW CONTENT STARTS HERE */}
-
-        <div style={sectionStyle}>
-          <h2 style={headingStyle}>மருந்து செயல்பாட்டை பாதிக்கும் உணவுகள்</h2>
-          <img
-            src={junkFoodImg}
-            alt="Junk Foods"
-            style={{
-              width: "100%",
-              maxWidth: isMobile ? "300px" : "460px",
-              height: "auto",
-              display: "block",
-              margin: "0 auto",
-              borderRadius: "10px",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-            }}
-          />
         </div>
 
         <div style={sectionStyle}>
@@ -301,8 +300,6 @@ const HypothyroidAppTamil = () => {
             ))}
           </ul>
         </div>
-
-        {/* ✅ NEW CONTENT ENDS HERE */}
       </div>
     </div>
   );
