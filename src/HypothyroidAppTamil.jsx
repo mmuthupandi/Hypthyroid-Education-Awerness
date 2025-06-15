@@ -1,6 +1,7 @@
 import React from 'react';
-import myImage from './assets/info-en.translated.jpg';
+import myImage from './assets/info-ta.jpg';
 import thyroidImg from './assets/thyroid.jpg';
+import junkFoodImg from './assets/junkfood.jpg'; // ✅ new image import
 
 const HypothyroidAppTamil = () => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
@@ -184,21 +185,6 @@ const HypothyroidAppTamil = () => {
           </ul>
         </div>
 
-        {/* Thyroid Image Before "Why Women" */}
-        <img
-          src={thyroidImg}
-          alt="Thyroid Illustration"
-          style={{
-            width: "100%",
-            maxWidth: isMobile ? "260px" : "340px",
-            height: "auto",
-            display: "block",
-            margin: "32px auto",
-            borderRadius: "8px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
-          }}
-        />
-
         {/* Section 4 */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>ஏன் பெண்களுக்கு அதிகம் ஏற்படுகிறது?</h2>
@@ -225,6 +211,21 @@ const HypothyroidAppTamil = () => {
           </ul>
         </div>
 
+        {/* Thyroid Image */}
+        <img
+          src={thyroidImg}
+          alt="Thyroid Illustration"
+          style={{
+            width: "100%",
+            maxWidth: isMobile ? "260px" : "340px",
+            height: "auto",
+            display: "block",
+            margin: "32px auto",
+            borderRadius: "8px",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
+          }}
+        />
+
         {/* Section 6 */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>சிகிச்சை மற்றும் ஆலோசனை</h2>
@@ -245,6 +246,63 @@ const HypothyroidAppTamil = () => {
             ))}
           </ul>
         </div>
+
+        {/* ✅ NEW CONTENT STARTS HERE */}
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>மருந்து செயல்பாட்டை பாதிக்கும் உணவுகள்</h2>
+          <img
+            src={junkFoodImg}
+            alt="Junk Foods"
+            style={{
+              width: "100%",
+              maxWidth: isMobile ? "300px" : "460px",
+              height: "auto",
+              display: "block",
+              margin: "0 auto",
+              borderRadius: "10px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+            }}
+          />
+        </div>
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>காரணங்கள்</h2>
+          <ul style={listStyle}>
+            {[
+              "தானாகவே ஏற்படும் ஹாஷிமோட்டோவின் தைராய்டிடிஸ்",
+              "அதிக தைராய்டு செயல்பாடு அல்லது புற்றுநோய் சிகிச்சைக்கான கதிரியக்க ஐடியோடைன்",
+              "அதிக அளவில் எதிர்தைராய்டு மருந்துகள்",
+              "சில மருந்துகள்",
+              "கேல்ப் போன்ற ஆரோக்கிய உணவுகள்",
+              "பிடூட்டரி சுரப்பியின் செயலிழப்பு",
+              "பிறந்தபோதே ஏற்படும் கொங்கனிடல் ஹைப்போதைராய்டிசம்",
+              "கதிர்வீச்சு சிகிச்சை (தலை, கழுத்து பகுதி)"
+            ].map((item, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>›</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>நினைவில் கொள்ள வேண்டிய முக்கிய அம்சங்கள்</h2>
+          <ul style={listStyle}>
+            {[
+              "6 மாதத்திற்கு ஒருமுறை நிபுணரை பார்க்க வேண்டும்.",
+              "நிலையான நிலையில் இருந்தால் ஆண்டுக்கு ஒருமுறை ரத்தப் பரிசோதனை.",
+              "மாத்திரைகளை தினமும் தவறாமல் எடுத்துக்கொள்ள வேண்டும்.",
+              "கர்ப்பிணிப் பெண்கள் மருத்துவரை அணுகி மாத்திரை அளவை சரிசெய்ய வேண்டும்."
+            ].map((item, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>›</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ✅ NEW CONTENT ENDS HERE */}
       </div>
     </div>
   );
