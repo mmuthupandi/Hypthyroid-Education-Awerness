@@ -1,5 +1,5 @@
 import React from 'react';
-import myImage from './assets/info-ta.jpg';
+import myImage from './assets/info-en.translated.jpg';
 
 const HypothyroidAppTamil = () => {
   const sectionStyle = {
