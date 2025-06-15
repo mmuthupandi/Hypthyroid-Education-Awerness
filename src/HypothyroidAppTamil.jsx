@@ -1,5 +1,5 @@
 import React from 'react';
-import myImage from './assets/info-en.translated.jpg';
+import myImage from './assets/info-ta.jpg';
 import thyroidImg from './assets/thyroid.jpg';
 
 const HypothyroidAppTamil = () => {
@@ -184,6 +184,21 @@ const HypothyroidAppTamil = () => {
           </ul>
         </div>
 
+        {/* Thyroid Image Before "Why Women" */}
+        <img
+          src={thyroidImg}
+          alt="Thyroid Illustration"
+          style={{
+            width: "100%",
+            maxWidth: isMobile ? "260px" : "340px",
+            height: "auto",
+            display: "block",
+            margin: "32px auto",
+            borderRadius: "8px",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
+          }}
+        />
+
         {/* Section 4 */}
         <div style={sectionStyle}>
           <h2 style={headingStyle}>ஏன் பெண்களுக்கு அதிகம் ஏற்படுகிறது?</h2>
@@ -209,21 +224,6 @@ const HypothyroidAppTamil = () => {
             ))}
           </ul>
         </div>
-
-        {/* Insert Image Here */}
-        <img
-          src={thyroidImg}
-          alt="Thyroid Illustration"
-          style={{
-            width: "100%",
-            maxWidth: isMobile ? "260px" : "340px",
-            height: "auto",
-            display: "block",
-            margin: "32px auto",
-            borderRadius: "8px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.08)"
-          }}
-        />
 
         {/* Section 6 */}
         <div style={sectionStyle}>
