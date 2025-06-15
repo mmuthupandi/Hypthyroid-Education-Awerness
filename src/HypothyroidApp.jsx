@@ -1,6 +1,7 @@
 import React from 'react';
 import myImage from './assets/info-en.jpg';
 import thyroidImage from './assets/thyroid.jpg';
+import junkfoodImage from './assets/junkfood.jpg';
 
 const HypothyroidApp = () => {
   const isMobile = window.innerWidth <= 768;
@@ -238,9 +239,62 @@ const HypothyroidApp = () => {
             ))}
           </ul>
         </div>
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>Causes</h2>
+          <ul style={listStyle}>
+            {[
+              "Autoimmune thyroid disease sometimes called Hashimoto’s thyroiditis",
+              "Radioactive iodine or surgery to correct hyperthyroidism or thyroid cancer",
+              "Over-treatment of hyperthyroidism with antithyroid drugs",
+              "Some medicines",
+              "Some health foods, e.g. kelp (seaweed)",
+              "A malfunction of the pituitary gland",
+              "Sometimes hypothyroidism is present at birth - this is known as congenital hypothyroidism",
+              "Radiation for head and neck cancers"
+            ].map((cause, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>•</span>
+                {cause}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <img
+            src={junkfoodImage}
+            alt="Avoid junk food"
+            style={{
+              width: "100%",
+              maxWidth: "400px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              height: "auto"
+            }}
+          />
+        </div>
+
+        <div style={sectionStyle}>
+          <h2 style={headingStyle}>Key Points to Remember</h2>
+          <ul style={listStyle}>
+            {[
+              "Review specialist in thyroid and other endocrine disorders - every 6 months",
+              "Once stable you should have a blood test once a year to check your thyroid hormone levels",
+              "Take your tablets consistently every day",
+              "Pregnant women with hypothyroidism are recommended to consult physician for dosage adjustment based on the thyroid level"
+            ].map((point, index) => (
+              <li key={index} style={listItemStyle}>
+                <span style={bulletStyle}>•</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 
 export default HypothyroidApp;
+
